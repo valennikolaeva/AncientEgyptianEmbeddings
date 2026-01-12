@@ -1,2 +1,0 @@
-# AncientEgyptianEmbeddings
-The Egyptians believed the most significant thing you could do in your life was die.
