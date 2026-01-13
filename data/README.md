@@ -28,7 +28,7 @@ data/
     ├── altes_reich_lemmas_NORMALIZED.txt     # Normalized lemmatized corpus
     ├── corpus_lemmatized_filtered.txt        # Filtered version for Word2Vec
     ├── corpus_lemmatized_full.parquet        # Complete processed corpus
-    └── training_pairs.csv                     # Egyptian-German parallel sentences
+    └── training_pairs.parquet                # Egyptian-German parallel sentences
 ```
 
 ## Processing Pipeline
@@ -70,7 +70,7 @@ Process:
    - Minimum translation length ≥ 5 words
    - Non-empty translations
 
-**Output**: `training_pairs.csv`
+**Output**: `training_pairs.parquet`
 
 ### Step 4: Filtered Versions
 
@@ -90,25 +90,20 @@ Process:
 ## File Descriptions
 
 ### `altes_reich_lemmas_NORMALIZED.txt`
-- **Format**: Plain text, one sentence per line
 - **Content**: Lemmatized Ancient Egyptian sentences
 - **Normalization**: Consistent Unicode representation of Egyptian characters (ḫ, ḏ, ꜥ, ꜣ, etc.)
-- **Usage**: Word2Vec training, tokenizer training, corpus statistics
-- **Size**: ~45,000 tokens, ~4,100 unique lemmas
+- **Usage**: Data for Word2Vec experiments
+
 
 ### `corpus_lemmatized_filtered.txt`
-- **Format**: Plain text, one sentence per line
 - **Content**: Subset of normalized corpus after quality filtering - **TLA Thesaurus only**
 - **Filtering criteria**:
   - Remove fragmentary texts (marked with `[...]`)
   - Remove uncertain readings (marked with `?`)
   - Minimum 3 words per sentence
-- **Usage**: Cleaner data for Word2Vec experiments
-- **Size**: 20,492 sentences, 181,967 tokens, 5,950 unique lemmas
-- **Retention rate**: 77.5% of sentences, 82.3% of tokens from normalized corpus
+- **Usage**: Data for Word2Vec experiments
 
 ### `corpus_lemmatized_full.parquet`
-- **Format**: Apache Parquet (columnar)
 - **Content**: Complete processed corpus with metadata from **both TLA dump and Hugging Face dataset**
 - **Columns**:
   - `text_id`: TLA text unit identifier
@@ -120,11 +115,9 @@ Process:
   - `lemmas_text`: Space-separated lemmas
   - `surface_text`: Space-separated surface forms
 - **Usage**: Full corpus analysis, metadata extraction
-- **Size**: 28,847 records from 7,598 unique text units
-- **Memory footprint**: ~25 MB
 
-### `training_pairs.csv`
-- **Format**: CSV with UTF-8 encoding
+
+### `training_pairs.parquet`
 - **Columns**:
   - `text_id`: Source text identifier
   - `sentence_id`: Sentence identifier
@@ -133,8 +126,7 @@ Process:
   - `word_count`: Number of words in Egyptian sentence
   - Additional metadata columns
 - **Usage**: Fine-tuning LaBSE on Egyptian-German parallel data
-- **Size**: ~8,500 sentence pairs
-- **Split**: 80% train / 10% validation / 10% test
+
 
 ## Corpus Statistics
 
@@ -153,13 +145,12 @@ Process:
 - **Unique lemmas**: 5,950
 - **Source**: TLA Thesaurus only
 
-### Parallel Corpus (training_pairs.csv)
-- **Parallel sentences**: 100,819
-- **Egyptian tokens**: 796,637
-- **German tokens**: 1,241,248
-- **Coverage**: 100% of extracted sentences have translations
-- **Average Egyptian sentence length**: 7.90 tokens
-- **Average German sentence length**: 12.31 tokens
+### Parallel Corpus (training_pairs.parquet)
+- **Parallel sentences**: 28,066
+- **Egyptian tokens**: 192,925
+- **German tokens**: 311,402
+- **Average Egyptian sentence length**: 6.87 tokens
+- **Average German sentence length**: 11.10 tokens
 
 ### Most Frequent Lemmas
 1. `=k` (2nd person suffix pronoun) - 12,059 occurrences (5.45%)
