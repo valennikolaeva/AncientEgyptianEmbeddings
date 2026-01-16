@@ -1,6 +1,6 @@
 The Egyptians believed the most significant thing you could do in your life was die.
 
-# Ancient Egyptian Contextual Embeddings 𓄿 𓅓 𓏏
+# Ancient Egyptian Contextual Embeddings 𓇓𓏏𓈖𓇋𓇋𓀭
 
 ## Repository Structure
 
