@@ -1,4 +1,4 @@
-# ё Research Notebooks
+# Research Notebooks
 
 In this directory, you will find the step-by-step computational pipeline for the Ancient Egyptian semantic analysis. The notebooks are numbered to reflect the logical order of the research process.
 
