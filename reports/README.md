@@ -11,3 +11,13 @@
 ## Map of the  English language
 
 [![View Report](https://img.shields.io/badge/View-Interactive_Report-blue?style=for-the-badge&logo=github)](https://valennikolaeva.github.io/AncientEgyptianEmbeddings/reports/english_umap.html)
+
+
+## WSI Word2Vec
+![wsi_word2vec](word2vec_semantic_analysis.pdf)
+
+
+## WSI LaBSE
+
+![wsi_labse](labse_semantic_analysis_2.pdf)
+
