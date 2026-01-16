@@ -14,10 +14,10 @@
 
 
 ## WSI Word2Vec
-![wsi_word2vec](word2vec_semantic_analysis.pdf)
+[wsi_word2vec](word2vec_semantic_analysis.pdf)
 
 
 ## WSI LaBSE
 
-![wsi_labse](labse_semantic_analysis_2.pdf)
+[wsi_labse](labse_semantic_analysis_2.pdf)
 
