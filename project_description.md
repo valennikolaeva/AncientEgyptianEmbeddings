@@ -1,6 +1,7 @@
 # Cross-lingual Transfer to Ancient Egyptian: WSI and Semantic Shift via SONAR
 
 **Автор:** Валентина Николаева 
+
 **Научный руководитель:** Иннокентий Хумонен  
 
 ---
